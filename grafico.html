@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gráfico de Função</title>
+    <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+    <div id="graficoArea">
+        <canvas id="meuGrafico" width="400" height="300"></canvas>
+        <div id="controles">
+            <label for="tipoFuncao">Tipo de Função: </label>
+            <select id="tipoFuncao">
+                <option value="logaritmica">Logarítmica</option>
+                <option value="exponencial">Exponencial</option>
+                <option value="polinomial">Polinomial</option>
+            </select>
+            <label for="funcao">Função: y = </label>
+            <input type="text" id="funcao" value="Math.log10(x)">
+            <label for="xMin">xMin:</label>
+            <input type="number" id="xMin" value="-10">
+            <label for="xMax">xMax:</label>
+            <input type="number" id="xMax" value="10">
+            <label for="yMin">yMin:</label>
+            <input type="number" id="yMin" value="-10">
+            <label for="yMax">yMax:</label>
+            <input type="number" id="yMax" value="10">
+            <button id="desenharGrafico">Desenhar Gráfico</button>
+        </div>
+        <div id="mensagem"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0/dist/chartjs-plugin-annotation.min.js"></script>
+    <script src="codigo.js"></script>
+</body>
+</html>
