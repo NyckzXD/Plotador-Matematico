@@ -11,22 +11,28 @@ const tipoFuncaoSelect = document.getElementById('tipoFuncao');
 
 let grafico;
 
-function preProcessarFuncao(funcaoStr) {
-    return funcaoStr
-        .replace(/\bln\(/g, 'Math.log(')
-        .replace(/\blog\(/g, 'Math.log10(')
-        .replace(/\bsqrt\(/g, 'Math.sqrt(')
-        .replace(/\be\^/g, 'Math.exp(')
-        .replace(/\bpi\b/gi, 'Math.PI')
-        .replace(/\bsin\(/g, 'Math.sin(')
-        .replace(/\bcos\(/g, 'Math.cos(')
-        .replace(/\btan\(/g, 'Math.tan(')
-        .replace(/\^/g, '**');
+function preProcessarFuncaoMelhorado(funcaoStr) {
+    const replacements = [
+        { regex: /\blog10\(/g, replacement: 'log10(' },
+        { regex: /\be\^/g, replacement: 'exp(' },
+        { regex: /\bpi\b/gi, replacement: 'PI' },
+        { regex: /\bsin\(/g, replacement: 'sin(' },
+        { regex: /\bcos\(/g, replacement: 'cos(' },
+        { regex: /\btan\(/g, replacement: 'tan(' },
+        { regex: /\^/g, replacement: '**' },
+        // Adicionar mais tipos de funcao
+    ];
+
+    let resultado = funcaoStr;
+    for (const rep of replacements) {
+        resultado = resultado.replace(rep.regex, rep.replacement);
+    }
+    return resultado;
 }
 
 function avaliarFuncao(x, funcaoStr) {
     try {
-        const funcaoPreparada = preProcessarFuncao(funcaoStr);
+        const funcaoPreparada = preProcessarFuncaoMelhorado(funcaoStr);
         const func = new Function('x', 'return ' + funcaoPreparada + ';');
         const y = func(x);
         if (!isFinite(y)) return NaN;
@@ -37,13 +43,12 @@ function avaliarFuncao(x, funcaoStr) {
     }
 }
 
-function desenharGrafico() { 
+function desenharGrafico() {
     const xMin = parseFloat(inputXMin.value);
     const xMax = parseFloat(inputXMax.value);
     const yMin = parseFloat(inputYMin.value);
     const yMax = parseFloat(inputYMax.value);
     const funcaoStr = inputFuncao.value;
-    const tipoFuncao = tipoFuncaoSelect.value;
 
     mensagemErro.textContent = "";
 
@@ -71,6 +76,7 @@ function desenharGrafico() {
 
     if (pontos.length === 0) {
         mensagemErro.textContent = "Nenhum ponto válido para plotar. Verifique a função.";
+        if (grafico) grafico.destroy();
         return;
     }
 
@@ -82,7 +88,7 @@ function desenharGrafico() {
             datasets: [{
                 label: 'y = ' + funcaoStr,
                 data: pontos,
-                borderColor: 'blue',
+                borderColor: 'lightgreen',
                 fill: false,
                 pointRadius: 0
             }]
@@ -153,8 +159,10 @@ function desenharGrafico() {
             }
         }
     });
+}
 
-    switch (tipoFuncao) {
+tipoFuncaoSelect.addEventListener('change', () => {
+    switch (tipoFuncaoSelect.value) {
         case 'logaritmica':
             inputFuncao.value = 'Math.log10(x)';
             inputXMin.value = '-10';
@@ -170,30 +178,31 @@ function desenharGrafico() {
             inputYMax.value = '10';
             break;
         case 'polinomial':
-            inputFuncao.value = '';
+            inputFuncao.value = 'x^2';
+            inputXMin.value = '-10';
+            inputXMax.value = '10';
+            inputYMin.value = '-10';
+            inputYMax.value = '10';
+            break;
+        default:
+            inputFuncao.value = 'x';
             inputXMin.value = '-10';
             inputXMax.value = '10';
             inputYMin.value = '-10';
             inputYMax.value = '10';
             break;
     }
-}
-if (!inputFuncao.value) {
-    inputFuncao.value = funcaoPadrao;
-}
-tipoFuncaoSelect.addEventListener('change', () => {
-switch (tipoFuncaoSelect.value) {
-    case 'logaritmica':
-        inputFuncao.value = 'Math.log10(x)';
-        break;
-    case 'exponencial':
-        inputFuncao.value = 'Math.exp(x)';
-        break;
-    case 'polinomial':
-        inputFuncao.value = 'x^2';
-        break;
-}
+    desenharGrafico();
 });
 
+if (!inputFuncao.value) {
+    inputFuncao.value = 'x';
+    inputXMin.value = '-10';
+    inputXMax.value = '10';
+    inputYMin.value = '-10';
+    inputYMax.value = '10';
+}
+
 botaoDesenhar.addEventListener('click', desenharGrafico);
+
 desenharGrafico();
