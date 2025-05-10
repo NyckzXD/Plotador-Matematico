@@ -11,7 +11,7 @@ const tipoFuncaoSelect = document.getElementById('tipoFuncao');
 
 let grafico;
 
-function preProcessarFuncaoMelhorado(funcaoStr) {
+function preProcessarFuncao(funcaoStr) {
     const replacements = [
         { regex: /\blog10\(/g, replacement: 'log10(' },
         { regex: /\be\^/g, replacement: 'exp(' },
@@ -32,7 +32,7 @@ function preProcessarFuncaoMelhorado(funcaoStr) {
 
 function avaliarFuncao(x, funcaoStr) {
     try {
-        const funcaoPreparada = preProcessarFuncaoMelhorado(funcaoStr);
+        const funcaoPreparada = preProcessarFuncao(funcaoStr);
         const func = new Function('x', 'return ' + funcaoPreparada + ';');
         const y = func(x);
         if (!isFinite(y)) return NaN;
