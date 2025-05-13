@@ -37,7 +37,7 @@ Este é um programa web interativo que permite ao usuário **plotar gráficos de
 ## 📂 Como usar
 
 1. Clone ou baixe este repositório.
-2. Abra o arquivo `index.html` em um navegador moderno.
+2. Abra o arquivo `grafico.html` em um navegador moderno.
 3. Digite uma função no campo correspondente.
 4. Defina os intervalos de **x** e **y**.
 5. Clique em **"Desenhar gráfico"**.
