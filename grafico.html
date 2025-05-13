@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="graficoArea">
-        <canvas id="meuGrafico" width="900" height="600"></canvas>
+        <canvas id="meuGrafico" width="900" height="500"></canvas>
         <div id="controles">
             <label for="tipoFuncao">Tipo de Função: </label>
             <select id="tipoFuncao">
@@ -16,6 +16,7 @@
                 <option value="logaritmica">Logarítmica</option>
                 <option value="exponencial">Exponencial</option>
                 <option value="polinomial">Polinomial</option>
+                <!-- Adicionar mais tipos de funçoes suportadas pelo math.js-->
             </select>
             <label for="funcao">Função: </label>
             <input type="text" id="funcao" value="">
@@ -31,6 +32,7 @@
         </div>
         <div id="mensagem"></div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.0/lib/browser/math.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0/dist/chartjs-plugin-annotation.min.js"></script>
     <script src="codigo.js"></script>
