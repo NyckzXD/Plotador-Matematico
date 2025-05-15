@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gráfico de Função</title>
+    <link rel="stylesheet" href="styletest.css" />
+</head>
+<body>
+<div id="graficoArea">
+    <div class="layout-horizontal">
+        <div id="controles">
+            <label for="tipoFuncao">Tipo de Função: </label>
+            <select id="tipoFuncao">
+                <option value=""> </option>
+                <option value="logaritmica">Logarítmica</option>
+                <option value="exponencial">Exponencial</option>
+                <option value="polinomial">Polinomial</option>
+            </select>
+            <label for="funcao">Função: </label>
+            <input type="text" id="funcao" value="">
+            <label for="xMin">Min de x:</label>
+            <input type="number" id="xMin" value="-10">
+            <label for="xMax">Max de x:</label>
+            <input type="number" id="xMax" value="10">
+            <label for="yMin">Min de y:</label>
+            <input type="number" id="yMin" value="-10">
+            <label for="yMax">Max de y:</label>
+            <input type="number" id="yMax" value="10">
+            <button id="desenharGrafico">Desenhar Gráfico</button>
+        </div>
+        <canvas id="meuGrafico" width="900" height="600"></canvas>
+    </div>
+    <div id="mensagem"></div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.0/lib/browser/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0/dist/chartjs-plugin-annotation.min.js"></script>
+    <script src="codetest.js"></script>
+</body>
+</html>
