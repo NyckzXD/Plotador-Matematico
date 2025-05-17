@@ -1,6 +1,6 @@
 # 📊 Plotador de Funções Matemáticas
 
-Este é um programa web interativo que permite ao usuário **plotar gráficos de funções matemáticas** personalizadas. Ele utiliza as bibliotecas [Chart.js](https://www.chartjs.org/) para renderização dos gráficos e [math.js](https://mathjs.org/) para análise e avaliação segura das expressões matemáticas.
+Este é um programa web interativo que permite ao usuário **plotar gráficos de funções matemáticas** personalizadas. Ele utiliza as bibliotecas [Chart.js](https://www.chartjs.org/) para renderização dos gráficos e [math.js](https://mathjs.org/) para análise e avaliação das expressões matemáticas.
 
 ---
 
@@ -32,13 +32,3 @@ Este é um programa web interativo que permite ao usuário **plotar gráficos de
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Chart.js](https://www.chartjs.org/) (gráficos)
 - [math.js](https://mathjs.org/) (avaliação de funções)
-
----
-## 📂 Como usar
-
-1. Clone ou baixe este repositório.
-2. Abra o arquivo `grafico.html` em um navegador moderno.
-3. Digite uma função no campo correspondente.
-4. Defina os intervalos de **x** e **y**.
-5. Clique em **"Desenhar gráfico"**.
-6. Ou selecione um exemplo no menu de tipo de função.
