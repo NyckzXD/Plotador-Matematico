@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="images/favinco.ico" type="image/x-icon">
+    <title>Gráfico de Função</title>
+    <link rel="stylesheet" href="styletest.css" />
+    <script type="text/javascript" src="darkmode.js" defer></script>
+</head>
+<body>
+<img src="images/anhanguera.png"></img>
+  <style>
+        body.darkmode {
+            background-color: #141414;
+            color: #e3e3e3;
+        }
+    </style>
+
+
+<header>
+    
+    <button id="themeswitch">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+            <path d="M484-80q-84 0-157.5-32t-128-86.5Q144-253 112-326.5T80-484q0-146 93-257.5T410-880q-18 99 11 193.5T521-521q71 71 165.5 100T880-410q-26 144-138 237T484-80Z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e">
+            <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/>
+        </svg>
+    </button>
+</header>
+
+<div id="graficoArea">
+    <div class="layout-horizontal">
+        <div id="controles">
+            <label for="tipoFuncao">Tipo de Função: </label>
+            <select id="tipoFuncao">
+                <option value="" disabled selected>Selecione uma função</option>
+                <option value="logaritmica">Logarítmica</option>
+                <option value="exponencial">Exponencial</option>
+                <option value="polinomial">Polinomial</option>
+            </select>
+            <label for="funcao">Função: </label>
+            <input type="text" id="funcao" value="">
+            <label for="xMin">Min de x:</label>
+            <input type="number" id="xMin" value="-10">
+            <label for="xMax">Max de x:</label>
+            <input type="number" id="xMax" value="10">
+            <label for="yMin">Min de y:</label>
+            <input type="number" id="yMin" value="-10">
+            <label for="yMax">Max de y:</label>
+            <input type="number" id="yMax" value="10">
+            <button id="desenharGrafico">Desenhar Gráfico</button>
+        </div>
+        <canvas id="meuGrafico" width="900" height="600"></canvas>
+    </div>
+    <div id="mensagem"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.0/lib/browser/math.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0/dist/chartjs-plugin-annotation.min.js"></script>
+<script src="codetest.js"></script>
+
+</body>
+</html>

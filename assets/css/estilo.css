@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+#graficoArea {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.layout-horizontal {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+#controles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+#controles input,
+#controles select,
+#controles button {
+    padding: 6px;
+    font-size: 14px;
+    width: 180px;
+}
+
+canvas {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 400px;
+    height: 300px;
+}
+label {
+    margin-right: 5px;
+}
+input[type="number"], input[type="text"], select {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #367c39;
+}
+#mensagem {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
