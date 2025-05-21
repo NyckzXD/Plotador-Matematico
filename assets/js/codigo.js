@@ -21,7 +21,6 @@ function compilarFuncao(funcaoStr) {
     }
 }
 
-// Avalia a função
 function avaliarFuncao(compilada, x) {
     try {
         const y = compilada.evaluate({ x });
@@ -79,7 +78,7 @@ function desenharGrafico() {
             datasets: [{
                 label: 'y = ' + funcaoStr,
                 data: pontos,
-                borderColor: 'lightgreen',
+                borderColor: '#d95c2f',
                 fill: false,
                 pointRadius: 0,
                 tension: 0.1
