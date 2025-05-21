@@ -1,8 +1,8 @@
 
 :root {
 
---base-variant : #004ecc;
---primary-color : #d95c2f;
+    --base-variant : #004ecc;
+        --primary-color : #c78304;
 }
 body {
     font-family: Arial, sans-serif;
@@ -63,14 +63,14 @@ input[type="number"], input[type="text"], select {
 }
 button {
     padding: 8px 16px;
-    background-color: #d95c2f;
+    background-color: #e59400;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 button:hover {
-    background-color: #d95c2f;
+    background-color: #e4960a;
 }
 #mensagem {
     color: red;
@@ -80,9 +80,8 @@ button:hover {
 
 
 .darkmode {
- background-color: #0a0a0a;
- 
---primary-color : #d95c2f;
+ background-color: #bf1919;
+--primary-color : #c78304;
 --base-variant : #1f1f1f;
   body {
     font-family: Arial, sans-serif;
@@ -126,7 +125,7 @@ button:hover {
 }
 
 canvas {
-    border: 1px solid #d95c2f;
+    border: 1px solid #d78d05;
     border-radius: 5px;
     margin-bottom: 10px;
     width: 400px;
@@ -143,7 +142,7 @@ input[type="number"], input[type="text"], select {
 }
 button {
     padding: 8px 16px;
-    background-color: #d95c2f;
+    background-color: #e59400;
     color: rgb(14, 17, 34);
     border: none;
     border-radius: 5px;
@@ -151,7 +150,7 @@ button {
 }
 
 button:hover {
-    background-color: #d95c2f;
+    background-color: #e4960a;
 }
 #mensagem {
     color: red;

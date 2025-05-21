@@ -21,7 +21,6 @@ function compilarFuncao(funcaoStr) {
     }
 }
 
-// Avalia a função
 function avaliarFuncao(compilada, x) {
     try {
         const y = compilada.evaluate({ x });
@@ -79,7 +78,7 @@ function desenharGrafico() {
             datasets: [{
                 label: 'y = ' + funcaoStr,
                 data: pontos,
-                borderColor: 'lightgreen',
+                borderColor: '#d95c2f',
                 fill: false,
                 pointRadius: 0,
                 tension: 0.1
@@ -135,33 +134,22 @@ function desenharGrafico() {
 
 tipoFuncaoSelect.addEventListener('change', () => {
     const tipo = tipoFuncaoSelect.value;
-
     const exemplos = {
         'logaritmica': { func: 'log10(x)', xMin: 0.1, xMax: 10, yMin: -1, yMax: 2 },
         'exponencial': { func: 'exp(x)', xMin: -2, xMax: 5, yMin: -1, yMax: 150 },
         'polinomial': { func: 'x^2', xMin: -10, xMax: 10, yMin: -10, yMax: 100 },
         'linear': { func: 'x', xMin: -10, xMax: 10, yMin: -10, yMax: 10 }
     };
-const explicacoes = {
-    'linear': 'DEFINIÇAO AQUI',
-    'polinomial': 'DEFINIÇAO AQUI',
-    'exponencial': 'DEFINIÇAO AQUI',
-    'logaritmica': 'Funções logarítmicas são inversas das funções exponenciais. Têm a forma f(x) = log_a(x), onde "a" é a base do logaritmo (por exemplo, log10 para base 10, ln para base e). O domínio da função é x > 0. O gráfico é crescente para bases maiores que 1 e descreve um crescimento lento. São utilizadas para modelar fenômenos em que o crescimento desacelera com o tempo, como escala de Richter e decibéis.',
-};
-    const ex = exemplos[tipo] || exemplos['linear'];
-    const descricao = explicacoes[tipo] || '';
 
+    const ex = exemplos[tipo] || exemplos['linear'];
     inputFuncao.value = ex.func;
     inputXMin.value = ex.xMin;
     inputXMax.value = ex.xMax;
     inputYMin.value = ex.yMin;
     inputYMax.value = ex.yMax;
 
-    document.getElementById('definicao').textContent = descricao;
-
     desenharGrafico();
 });
-
 
 if (!inputFuncao.value) {
     inputFuncao.value = 'x';
