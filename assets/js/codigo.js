@@ -78,7 +78,7 @@ function desenharGrafico() {
             datasets: [{
                 label: 'y = ' + funcaoStr,
                 data: pontos,
-                borderColor: '#d95c2f',
+                borderColor: '#F95B07',
                 fill: false,
                 pointRadius: 0,
                 tension: 0.1

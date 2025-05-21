@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="assets/images/favinco.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
     <title>Gráfico de Função</title>
     <link rel="stylesheet" href="assets/css/estilo.css" />
     <script type="text/javascript" src="assets/js/darkmode.js" defer></script>
 </head>
 <body>
-<img src="assets/images/anhanguera.png"></img>
   <style>
         body.darkmode {
             background-color: #141413;
@@ -19,7 +18,7 @@
 
 
 <header>
-    
+    <img id="toplogo" src="assets/images/logo2.png"></img>
     <button id="themeswitch">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
             <path d="M484-80q-84 0-157.5-32t-128-86.5Q144-253 112-326.5T80-484q0-146 93-257.5T410-880q-18 99 11 193.5T521-521q71 71 165.5 100T880-410q-26 144-138 237T484-80Z"/>
@@ -29,7 +28,6 @@
         </svg>
     </button>
 </header>
-
 <div id="graficoArea">
     <div class="layout-horizontal">
         <div id="controles">
@@ -52,7 +50,7 @@
             <input type="number" id="yMax" value="10">
             <button id="desenharGrafico">Desenhar Gráfico</button>
         </div>
-        <canvas id="meuGrafico" width="900" height="600"></canvas>
+        <canvas id="meuGrafico" width="900" height="550"></canvas>
     </div>
     <div id="mensagem"></div>
 </div>
