@@ -2,7 +2,7 @@
 
 Este é um programa web interativo que permite ao usuário **plotar gráficos de funções matemáticas** personalizadas. Ele utiliza as bibliotecas [Chart.js](https://www.chartjs.org/) para renderização dos gráficos e [math.js](https://mathjs.org/) para análise e avaliação das expressões matemáticas.
 
-Acesse em: https://nyckzxd.github.io/Grafico-de-Funcao/
+Acesse em: https://nyckzxd.github.io/Plotador-Matematico/
 
 ---
 
